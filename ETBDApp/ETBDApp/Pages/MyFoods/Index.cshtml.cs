@@ -23,7 +23,7 @@ namespace ETBDApp.Pages.MyFoods
 
         public async Task OnGetAsync()
         {
-            Food = await _context.Foods.ToListAsync();
+            Food = await _context.Foods.Include(f => f.Category).ToListAsync();
         }
     }
 }

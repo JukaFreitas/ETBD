@@ -12,9 +12,9 @@ namespace ETBDApp.Pages.MyCategories
 {
     public class CreateModel : PageModel
     {
-        private readonly ETBDApp.Data.ETBDDbContext _context;
+        private readonly ETBDDbContext _context;
 
-        public CreateModel(ETBDApp.Data.ETBDDbContext context)
+        public CreateModel(ETBDDbContext context)
         {
             _context = context;
         }
