@@ -1,27 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using ETBDApp.Data;
-using ETBDApp.Data.Entities;
+
 
 namespace ETBDApp.Pages.MyFoods
 {
     public class CreateModel : PageModel
     {
-        private readonly ETBDApp.Data.ETBDDbContext _context; 
+        private readonly ETBDDbContext _context; 
 
-        public CreateModel(ETBDApp.Data.ETBDDbContext context)
+        public CreateModel(ETBDDbContext context)
         {
             _context = context;
         }
 
         public IActionResult OnGet()
         {
-            this.Categories = new SelectList(_context.Categories, "Id",  "CategoryName"); 
+            Categories = new SelectList(_context.Categories, "Id",  "Name"); 
 
             return Page();
         }
@@ -38,14 +33,15 @@ namespace ETBDApp.Pages.MyFoods
         public async Task<IActionResult> OnPostAsync()
         {
             Food.Category = _context.Categories.Where(c => c.Id == SelectedCategoryId).FirstOrDefault();
-
+            //Deu erro, porque não o category não está preenchido. 
+            //Necessidade de revalidar, quando o category já está preenchido
             ModelState.Clear();
             TryValidateModel(Food);
             TryValidateModel(Food.Category);
 
             if (!ModelState.IsValid)
             {
-                this.Categories = new SelectList(_context.Categories, "Id", "CategoryName");
+                Categories = new SelectList(_context.Categories, "Id", "Name");
                 return Page();
             }
 

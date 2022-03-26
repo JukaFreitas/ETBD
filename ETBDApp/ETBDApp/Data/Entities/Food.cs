@@ -1,4 +1,5 @@
-﻿namespace ETBDApp.Data.Entities
+﻿
+namespace ETBDApp.Data.Entities
 {
     public class Food
     {
@@ -9,6 +10,6 @@
         public Category Category { get; set; }  
 
         [Required]
-        public string FoodName { get; set; }
+        public string Name { get; set; }
     }
 }

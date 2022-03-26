@@ -15,12 +15,12 @@
         <form method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Food.FoodName" class="control-label"></label>
-                <input asp-for="Food.FoodName" class="form-control" />
-                <span asp-validation-for="Food.FoodName" class="text-danger"></span>
+                <label asp-for="Food.Name" class="control-label"></label>
+                <input asp-for="Food.Name" class="form-control" />
+                <span asp-validation-for="Food.Name" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Food.Category.CategoryName" class="control-label"></label>
+                <label asp-for="Food.Category.Name" class="control-label"></label>
                 <select asp-for="SelectedCategoryId" class ="form-control" asp-items="@Model.Categories"></select>
             </div>
             <div class="form-group">

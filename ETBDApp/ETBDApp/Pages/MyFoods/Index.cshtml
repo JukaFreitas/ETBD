@@ -14,7 +14,7 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Food[0].FoodName)
+                @Html.DisplayNameFor(model => model.Food[0].Name)
             </th>
             <th></th>
         </tr>
@@ -23,7 +23,7 @@
 @foreach (var item in Model.Food) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.FoodName)
+                @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

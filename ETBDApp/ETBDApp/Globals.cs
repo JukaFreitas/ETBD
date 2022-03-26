@@ -5,4 +5,6 @@ global using System.ComponentModel.DataAnnotations;
 global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 global using ETBDApp.Data.Entities;
 global using Action = ETBDApp.Data.Entities.Action;
-global using System.ComponentModel.DataAnnotations.Schema; 
+global using System.ComponentModel.DataAnnotations.Schema;
+
+

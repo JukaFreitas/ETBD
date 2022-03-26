@@ -14,9 +14,9 @@
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.Entity<Category>().Property(p => p.CategoryName).HasMaxLength(50); 
-            modelBuilder.Entity<Action>().Property(p => p.ActionName).HasMaxLength(50);
-            modelBuilder.Entity<Food>().Property(p => p.FoodName).HasMaxLength(50);
+            modelBuilder.Entity<Category>().Property(p => p.Name).HasMaxLength(50); 
+            modelBuilder.Entity<Action>().Property(p => p.Name).HasMaxLength(50);
+            modelBuilder.Entity<Food>().Property(p => p.Name).HasMaxLength(50);
         
         }
     }

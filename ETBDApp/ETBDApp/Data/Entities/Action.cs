@@ -7,7 +7,7 @@ namespace ETBDApp.Data.Entities
         public int Id { get; set; }
         
         [Required]
-        public string ActionName { get; set; }
+        public string Name { get; set; }
 
 
     }
