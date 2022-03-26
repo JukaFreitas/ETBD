@@ -1,0 +1,112 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = ETBDApp
+build_property.RootNamespace = ETBDApp
+build_property.ProjectDir = C:\Users\Juka\Documents\ETBD\ETBDApp\ETBDApp\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\Juka\Documents\ETBD\ETBDApp\ETBDApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Areas/Identity/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyActions/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlBY3Rpb25zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyActions/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlBY3Rpb25zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyActions/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlBY3Rpb25zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyActions/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlBY3Rpb25zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyActions/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlBY3Rpb25zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyCategories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlDYXRlZ29yaWVzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyCategories/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlDYXRlZ29yaWVzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyCategories/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlDYXRlZ29yaWVzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyCategories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlDYXRlZ29yaWVzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyCategories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlDYXRlZ29yaWVzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyFoods/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlGb29kc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyFoods/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlGb29kc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyFoods/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlGb29kc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyFoods/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlGb29kc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyFoods/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlGb29kc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/Shared/_LoginPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-0fmeoin6hg
