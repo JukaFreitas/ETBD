@@ -1,5 +1,5 @@
 ﻿@page
-@model ETBDApp.Pages.MyCategories.IndexModel
+@model ETBDApp.Pages.MyActions.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -14,16 +14,16 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Category[0].CategoryName)
+                @Html.DisplayNameFor(model => model.Action[0].ActionName)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Category) {
+@foreach (var item in Model.Action) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.CategoryName)
+                @Html.DisplayFor(modelItem => item.ActionName)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
