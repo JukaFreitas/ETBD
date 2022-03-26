@@ -7,8 +7,9 @@ namespace ETBDApp.Data.Entities
 
 
         [Required]
-        public Category Category { get; set; }  
+        public Category Category { get; set; }
 
+        [DisplayName("Food Name")]
         [Required]
         public string Name { get; set; }
     }
