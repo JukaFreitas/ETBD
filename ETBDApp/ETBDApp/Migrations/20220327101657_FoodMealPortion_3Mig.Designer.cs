@@ -4,6 +4,7 @@ using ETBDApp.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ETBDApp.Migrations
 {
     [DbContext(typeof(ETBDDbContext))]
-    partial class ETBDDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220327101657_FoodMealPortion_3Mig")]
+    partial class FoodMealPortion_3Mig
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -105,7 +107,8 @@ namespace ETBDApp.Migrations
                         .HasColumnType("int");
 
                     b.Property<decimal>("Portion")
-                        .HasColumnType("decimal(5)");
+                        .HasPrecision(5)
+                        .HasColumnType("decimal(5,2)");
 
                     b.Property<int>("PortionTypeId")
                         .HasColumnType("int");
