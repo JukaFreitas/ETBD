@@ -2,14 +2,14 @@
 {
     public class FoodMeal
     {
-        public Food Food { get; set; }
-        public Meal Meal { get; set; }
+        public Food Foods { get; set; }
+        public Meal Meals { get; set; }
 
         public int FoodId { get; set; }
         public int MealId { get; set; }
 
         [Required]
-        public PortionType PortionType { get; set; }
+        public PortionType PortionTypes { get; set; }
 
         [Required]
         public decimal Portion { get; set; }
