@@ -23,7 +23,12 @@ namespace ETBDApp.Pages.MyFoods
 
         public async Task OnGetAsync()
         {
+            var csvImporter = new CSVImporter(_context);
+
+            csvImporter.Import(); 
+
             Food = await _context.Foods.Include(f => f.Category).ToListAsync();
+            
         }
     }
 }

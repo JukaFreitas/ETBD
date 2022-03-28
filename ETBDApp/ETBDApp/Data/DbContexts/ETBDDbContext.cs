@@ -1,6 +1,4 @@
-﻿
-
-namespace ETBDApp.Data
+﻿namespace ETBDApp.Data
 {
     public class ETBDDbContext : IdentityDbContext<User>
     {
