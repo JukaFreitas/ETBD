@@ -1,12 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using ETBDApp.Data;
-using ETBDApp.Data.Entities;
+﻿
 
 namespace ETBDApp.Pages.MyFoods
 {
@@ -25,7 +17,8 @@ namespace ETBDApp.Pages.MyFoods
         {
             var csvImporter = new CSVImporter(_context);
 
-            csvImporter.Import(); 
+            csvImporter.Import();
+            
 
             Food = await _context.Foods.Include(f => f.Category).ToListAsync();
             
