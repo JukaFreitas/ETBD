@@ -1,3 +1,4 @@
+using ETBDApp.Data.Seeds;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +10,13 @@ builder.Services.AddDbContext<ETBDDbContext>(options =>
 
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
-    .AddEntityFrameworkStores<ETBDDbContext>();
+//builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+//    .AddEntityFrameworkStores<ETBDDbContext>();
+builder.Services
+    .AddIdentity<User, IdentityRole>()
+    .AddEntityFrameworkStores<ETBDDbContext>()
+    .AddDefaultUI()
+    .AddDefaultTokenProviders();
 
 builder.Services.AddRazorPages();
 
@@ -37,5 +43,11 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapRazorPages();
+
+using (var scope = app.Services.CreateScope())
+{
+    var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
+    await ContextSeeder.SeedRolesAsync(roleManager);
+}
 
 app.Run();
