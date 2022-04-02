@@ -2,9 +2,6 @@
 // The .NET Foundation licenses this file to you under the MIT license.
 #nullable disable
 
-using System;
-using Microsoft.AspNetCore.Mvc.Rendering;
-
 namespace  ETBDApp.Areas.Identity.Pages.Account.Manage
 {
     /// <summary>
@@ -61,6 +58,8 @@ namespace  ETBDApp.Areas.Identity.Pages.Account.Manage
         /// </summary>
         public static string TwoFactorAuthentication => "TwoFactorAuthentication";
 
+        public static string ImportData => "ImportData"; 
+
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.
@@ -109,6 +108,7 @@ namespace  ETBDApp.Areas.Identity.Pages.Account.Manage
         /// </summary>
         public static string TwoFactorAuthenticationNavClass(ViewContext viewContext) => PageNavClass(viewContext, TwoFactorAuthentication);
 
+        public static string ImportDataNavClass(ViewContext viewContext) => PageNavClass(viewContext, ImportData); 
         /// <summary>
         ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
         ///     directly from your code. This API may change or be removed in future releases.

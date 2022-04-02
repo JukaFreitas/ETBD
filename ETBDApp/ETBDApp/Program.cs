@@ -1,3 +1,5 @@
+
+
 using ETBDApp.Data.Seeds;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -19,6 +21,9 @@ builder.Services
     .AddDefaultTokenProviders();
 
 builder.Services.AddRazorPages();
+
+//injeção de dependecia. 
+builder.Services.AddTransient<ICSVImporter, CSVImporter>();
 
 var app = builder.Build();
 
@@ -46,8 +51,11 @@ app.MapRazorPages();
 
 using (var scope = app.Services.CreateScope())
 {
+    var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     await ContextSeeder.SeedRolesAsync(roleManager);
+    await ContextSeeder.SeedAdminAsync(userManager, roleManager); 
+    
 }
 
 app.Run();

@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -24,13 +25,24 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                        </li>
+                        
+                        @if (Context.User.IsInRole("Admin"))
+                    {
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/MyCategories/Index">Category</a>
+                              </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/MyActions/Index">Action</a>
+                              </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/MyFoods/Index">Food</a>
-                        </li>
+                            </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/MyDashboard/DashBoard">DashBoard</a>
+                            </li>
+                    }
+                        
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
