@@ -1,18 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using ETBDApp.Data;
-using ETBDApp.Data.Entities;
-
+﻿
 namespace ETBDApp.Pages.MyActions
 {
     public class CreateModel : PageModel
     {
-        private readonly ETBDApp.Data.ETBDDbContext _context;
+        private readonly ETBDDbContext _context;
 
         public CreateModel(ETBDApp.Data.ETBDDbContext context)
         {
@@ -21,11 +12,13 @@ namespace ETBDApp.Pages.MyActions
 
         public IActionResult OnGet()
         {
+
             return Page();
         }
 
         [BindProperty]
         public Action Action { get; set; }
+      
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()

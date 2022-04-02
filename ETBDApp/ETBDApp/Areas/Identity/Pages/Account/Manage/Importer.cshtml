@@ -1,0 +1,25 @@
+﻿@page
+@model ETBDApp.Areas.Identity.Pages.Account.Manager.ImporterModel
+@{
+    ViewData["Title"] = "Import Data";
+    ViewData["ActivePage"] = ManageNavPages.ImportData; 
+}
+
+<h3>@ViewData["Title"]</h3>
+
+<div class="row">
+    <div class="col-md-6">
+        <p>Escrever algo sobre o upload da info.</p>
+        <p>
+            <strong>Continuar a escrever algo .</strong>
+        </p>
+        <form method="post">
+            <button class="btn btn-primary" type="submit" asp-page-handler="Import">Upload</button>
+        </form>
+        
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

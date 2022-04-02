@@ -1,12 +1,10 @@
-﻿
-
-namespace ETBDApp.Pages.MyFoods
+﻿namespace ETBDApp.Pages.MyFoods
 {
     public class IndexModel : PageModel
     {
-        private readonly ETBDApp.Data.ETBDDbContext _context;
+        private readonly ETBDDbContext _context;
 
-        public IndexModel(ETBDApp.Data.ETBDDbContext context)
+        public IndexModel(ETBDDbContext context)
         {
             _context = context;
         }
@@ -15,13 +13,7 @@ namespace ETBDApp.Pages.MyFoods
 
         public async Task OnGetAsync()
         {
-            var csvImporter = new CSVImporter(_context);
-
-            csvImporter.Import();
-            
-
-            Food = await _context.Foods.Include(f => f.Category).ToListAsync();
-            
+            Food = await _context.Foods.Include(f => f.Category).ToListAsync();            
         }
     }
 }

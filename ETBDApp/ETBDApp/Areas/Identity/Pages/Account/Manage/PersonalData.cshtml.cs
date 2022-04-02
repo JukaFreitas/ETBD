@@ -1,12 +1,6 @@
 ﻿// Licensed to the .NET Foundation under one or more agreements.
 // The .NET Foundation licenses this file to you under the MIT license.
-using System;
-using System.Threading.Tasks;
-using ETBDApp.Data.Entities;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.Extensions.Logging;
+
 
 namespace ETBDApp.Areas.Identity.Pages.Account.Manage
 {
@@ -15,9 +9,7 @@ namespace ETBDApp.Areas.Identity.Pages.Account.Manage
         private readonly UserManager<User> _userManager;
         private readonly ILogger<PersonalDataModel> _logger;
 
-        public PersonalDataModel(
-            UserManager<User> userManager,
-            ILogger<PersonalDataModel> logger)
+        public PersonalDataModel(UserManager<User> userManager, ILogger<PersonalDataModel> logger)
         {
             _userManager = userManager;
             _logger = logger;

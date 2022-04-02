@@ -1,8 +1,6 @@
-﻿
-
-namespace ETBDApp.Data
+﻿namespace ETBDApp.Data
 {
-    public class CSVImporter
+    public class CSVImporter : ICSVImporter
     {
         private readonly ETBDDbContext _context;
 
@@ -21,34 +19,37 @@ namespace ETBDApp.Data
             {
                 string[] columns = lines[i].Split(',');
 
+                if (_context.Foods.Any(x => x.Name.Equals(columns[0])))
+                {
+                    continue;
+                }
+
                 Category category;
-                Action action; 
+                Action action;
 
                 var categoryName = columns[1];
 
                 if (!_context.Categories.Any(x => x.Name.Equals(categoryName)))
                 {
                     category = new Category() { Name = categoryName };
-
                 }
                 else
                 {
                     category = _context.Categories.FirstOrDefault(x => x.Name.Equals(categoryName));
                 }
 
-                var food = new Food() {Name = columns[0], Category = category };
+                var food = new Food() { Name = columns[0], Category = category };
 
                 _context.Foods.Add(food);
                 _context.SaveChanges();
 
                 var actionsNames = columns[2].Trim().Split(';');
-                
+
                 foreach (var actionName in actionsNames)
                 {
-                    
                     if (!_context.Actions.Any(x => x.Name.Equals(actionName)))
                     {
-                        action = new Action() {Name = actionName};
+                        action = new Action() { Name = actionName };
                         _context.Actions.Add(action);
                         _context.SaveChanges();
                     }
@@ -57,8 +58,8 @@ namespace ETBDApp.Data
                         action = _context.Actions.FirstOrDefault(x => x.Name.Equals(actionName));
                     }
 
-                    var actionFood = new ActionFood() { Action = action, Food = food, ActionId = action.Id, FoodId = food.Id};
-                    _context.ActionFoods.Add(actionFood); 
+                    var actionFood = new ActionFood() { Action = action, Food = food, ActionId = action.Id, FoodId = food.Id };
+                    _context.ActionFoods.Add(actionFood);
                     _context.SaveChanges();
                 }
             }

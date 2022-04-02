@@ -1,0 +1,52 @@
+﻿@page
+@model ETBDApp.Pages.MyDashboard.DashBoardModel
+@{
+     ViewData["Title"] = "DashBoard";
+    
+}
+
+
+<h1></h1>
+
+<h4>DashBoard</h4>
+
+
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.CustomersCount)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.CustomersCount)
+            </dd>
+            </dl>
+            
+ <dl class="row">
+     <dt class="col-sm-2">
+         @Html.DisplayNameFor(model => model.MealsCount)
+         </dt>
+         <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.MealsCount)
+        </dd>
+        </dl>
+
+ <dl class="row">
+     <dt class="col-sm-2">
+         @Html.DisplayNameFor(model => model.TopFoods)
+         </dt>
+         <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TopFoods)
+        </dd>
+        </dl>
+
+ <dl class="row">
+     <dt class="col-sm-2">
+         @Html.DisplayNameFor(model => model.TopUsersMeals)
+         </dt>
+         <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TopUsersMeals)
+        </dd>
+        </dl>
+
+
+
+
