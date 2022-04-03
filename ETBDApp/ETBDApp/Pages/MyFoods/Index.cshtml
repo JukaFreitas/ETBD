@@ -3,6 +3,8 @@
 
 @{
     ViewData["Title"] = "Index";
+    int SelectedCategoryId = 0;
+    int SelectedActionId = 0; 
 }
 
 <h1>Index</h1>
@@ -10,17 +12,30 @@
 <p>
     <a asp-page="Create">Create New</a>
 </p>
+    <div class="form-group">
+                <form method="get">
+                <label asp-for="Foods[0].Category.Name" class="control-label"></label>
+                <select asp-for="SelectedCategoryId" class ="form-control" asp-items="@Model.Categories" onchange = "this.form.submit(SelectedCategoryId, SelectedActionId);"> 
+                    <option value="0">--All--</option>
+                </select>
+                <label asp-for="Actions" class="control-label"></label>
+                <select asp-for="SelectedActionId" class ="form-control" asp-items="@Model.Actions" onchange= "this.form.submit(SelectedCategoryId, SelectedActionId);"> 
+                    <option value="0">--All--</option>
+                </select>
+                </form>
+            </div>
+
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Food[0].Name)
+                @Html.DisplayNameFor(model => model.Foods[0].Name)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Food) {
+@foreach (var item in Model.Foods) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)

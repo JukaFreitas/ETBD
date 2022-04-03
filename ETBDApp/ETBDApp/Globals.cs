@@ -16,4 +16,5 @@ global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.AspNetCore.WebUtilities;
 global using Microsoft.AspNetCore.Mvc.Rendering;
 global using ETBDApp.Data.Interfaces;
-global using System.Linq; 
+global using System.Linq;
+global using ETBDApp.Pages.MyLists; 

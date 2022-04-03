@@ -26,6 +26,13 @@
                     <option value="0">--Select Category--</option>
                 </select>
             </div>
+             <p>Please select actions:</p>
+            @foreach(var action in Model.Actions)
+            {
+                <input type ="radio" id="@action.Id" name ="@action.Name" value = "@action.Id">
+                 <label for="@action.Id">@action.Name</label><br>
+            }
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

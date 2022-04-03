@@ -6,5 +6,7 @@
         public Food Food { get; set; }
         public User User { get; set; }
 
+        public DateTime CreationDate { get; set; }
+
     }
 }

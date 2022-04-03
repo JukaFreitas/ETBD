@@ -2,6 +2,7 @@
 {
     public class ETBDDbContext : IdentityDbContext<User>
     {
+        
         public DbSet<Category> Categories { get; set; }
         public DbSet<Action> Actions { get; set; }
         public DbSet<Food> Foods { get; set; }  
@@ -14,7 +15,7 @@
         public DbSet<FavouriteList> FavouriteLists { get; set; }
         public ETBDDbContext(DbContextOptions<ETBDDbContext> options) : base(options)
         {
-           
+            this.ChangeTracker.LazyLoadingEnabled = false; 
         }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -32,11 +33,7 @@
             //Fk
             modelBuilder.Entity<ActionFood>().HasKey(af => new { af.ActionId, af.FoodId });
             modelBuilder.Entity<FoodMeal>().HasKey(fm => new { fm.FoodId, fm.MealId });
-           
-            
-            
 
-        
         }
     }
 }

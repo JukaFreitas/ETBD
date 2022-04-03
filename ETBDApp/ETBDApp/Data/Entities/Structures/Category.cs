@@ -6,7 +6,7 @@ namespace ETBDApp.Data.Entities
     {
         public int Id { get; set; } 
 
-        [DisplayName("Category Name")]
+        [DisplayName("Category")]
         
         [Required]
         public string Name { get; set; }
