@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "e96KI5b3W+ke7cKpatwKw6rxT2pbAYKw/qmlwuegpv/9+psKqioklwT7hO4iYzhwE6tkVx7WjQJcPPp9Tx3/Mg==",
+  "dgSpecHash": "K8Gjx9pgRhZJTuOsbiJ9JWXceMh83HADHAIDRst5Ln+MWdDbMIHy3CoL7WyTzMSVnMvy+CPO5DB3dVYM+My/EA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Juka\\Documents\\ETBD\\ETBDApp\\ETBDApp\\ETBDApp.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\Juka\\.nuget\\packages\\aspose.cells\\22.3.0\\aspose.cells.22.3.0.nupkg.sha512",
     "C:\\Users\\Juka\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Juka\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\Juka\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",

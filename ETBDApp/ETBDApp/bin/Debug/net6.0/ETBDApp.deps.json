@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "ETBDApp/1.0.0": {
         "dependencies": {
+          "Aspose.Cells": "22.3.0",
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.3",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.3",
           "Microsoft.AspNetCore.Identity.UI": "6.0.3",
@@ -17,6 +18,18 @@
         },
         "runtime": {
           "ETBDApp.dll": {}
+        }
+      },
+      "Aspose.Cells/22.3.0": {
+        "dependencies": {
+          "System.Drawing.Common": "4.7.0",
+          "System.Text.Encoding.CodePages": "4.7.0"
+        },
+        "runtime": {
+          "lib/net60/Aspose.Cells.dll": {
+            "assemblyVersion": "22.3.0.0",
+            "fileVersion": "22.3.0.0"
+          }
         }
       },
       "Humanizer.Core/2.8.26": {
@@ -2311,6 +2324,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Aspose.Cells/22.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-HZwNb9WKBfkV9/wT4dqlBRxke9sMyfPgiSM553V5SyU1zTvhWd6rwO7oIa8znbP+7HgllfBHe75KADnMPPmSUQ==",
+      "path": "aspose.cells/22.3.0",
+      "hashPath": "aspose.cells.22.3.0.nupkg.sha512"
     },
     "Humanizer.Core/2.8.26": {
       "type": "package",

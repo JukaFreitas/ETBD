@@ -12,7 +12,7 @@
         public IActionResult OnGet()
         {
             this.Categories = new SelectList(_context.Categories, "Id", "Name");
-            this.Actions = _context.Actions;
+            this.Actions = new MultiSelectList(_context.Actions, "Id", "Name"); 
 
             return Page();
         }
@@ -25,11 +25,10 @@
         [BindProperty]
         public int SelectedCategoryId { get; set; }
 
-
-        public IEnumerable<Action> Actions { get; set; }
-
+        public MultiSelectList Actions { get; set; }
+     
         [BindProperty]
-        public IEnumerable<int> SelectedActionsId { get; set; }
+        public IList<int> SelectedActionsId { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -40,10 +39,11 @@
 
                 this.Categories = new SelectList(_context.Categories, "Id", "Name");
 
-                this.Actions = _context.Actions; 
+                this.Actions = new MultiSelectList(_context.Actions, "Id", "Name");
 
                 return Page();
             }
+
             Food.Category = _context.Categories.FirstOrDefault(c => c.Id == SelectedCategoryId);
 
             ModelState.Clear();
