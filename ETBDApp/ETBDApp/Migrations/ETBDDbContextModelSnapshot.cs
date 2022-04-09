@@ -37,7 +37,7 @@ namespace ETBDApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Actions");
+                    b.ToTable("Actions", (string)null);
                 });
 
             modelBuilder.Entity("ETBDApp.Data.Entities.ActionFood", b =>
@@ -52,7 +52,7 @@ namespace ETBDApp.Migrations
 
                     b.HasIndex("FoodId");
 
-                    b.ToTable("ActionFoods");
+                    b.ToTable("ActionFoods", (string)null);
                 });
 
             modelBuilder.Entity("ETBDApp.Data.Entities.BlackList", b =>
@@ -78,7 +78,7 @@ namespace ETBDApp.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("BlackLists");
+                    b.ToTable("BlackLists", (string)null);
                 });
 
             modelBuilder.Entity("ETBDApp.Data.Entities.Category", b =>
@@ -96,7 +96,7 @@ namespace ETBDApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Categories");
+                    b.ToTable("Categories", (string)null);
                 });
 
             modelBuilder.Entity("ETBDApp.Data.Entities.FavouriteList", b =>
@@ -122,7 +122,7 @@ namespace ETBDApp.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("FavouriteLists");
+                    b.ToTable("FavouriteLists", (string)null);
                 });
 
             modelBuilder.Entity("ETBDApp.Data.Entities.Food", b =>
@@ -145,7 +145,7 @@ namespace ETBDApp.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("Foods");
+                    b.ToTable("Foods", (string)null);
                 });
 
             modelBuilder.Entity("ETBDApp.Data.Entities.FoodMeal", b =>
@@ -156,11 +156,11 @@ namespace ETBDApp.Migrations
                     b.Property<int>("MealId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Portion")
-                        .HasColumnType("decimal(5)");
-
                     b.Property<int>("PortionTypesId")
                         .HasColumnType("int");
+
+                    b.Property<decimal>("Quantity")
+                        .HasColumnType("decimal(5)");
 
                     b.HasKey("FoodId", "MealId");
 
@@ -168,7 +168,7 @@ namespace ETBDApp.Migrations
 
                     b.HasIndex("PortionTypesId");
 
-                    b.ToTable("FoodMeals");
+                    b.ToTable("FoodMeals", (string)null);
                 });
 
             modelBuilder.Entity("ETBDApp.Data.Entities.Meal", b =>
@@ -182,22 +182,23 @@ namespace ETBDApp.Migrations
                     b.Property<DateTime>("EndDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                    b.Property<int>("MealTypeId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("UserId")
+                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("MealTypeId");
+
                     b.HasIndex("UserId");
 
-                    b.ToTable("Meals");
+                    b.ToTable("Meals", (string)null);
                 });
 
             modelBuilder.Entity("ETBDApp.Data.Entities.PortionType", b =>
@@ -213,7 +214,23 @@ namespace ETBDApp.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("PortionTypes");
+                    b.ToTable("PortionTypes", (string)null);
+                });
+
+            modelBuilder.Entity("ETBDApp.Data.Entities.Structures.MealType", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Type")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MealTypes", (string)null);
                 });
 
             modelBuilder.Entity("ETBDApp.Data.Entities.User", b =>
@@ -501,7 +518,7 @@ namespace ETBDApp.Migrations
                         .IsRequired();
 
                     b.HasOne("ETBDApp.Data.Entities.Meal", "Meal")
-                        .WithMany()
+                        .WithMany("FoodMeals")
                         .HasForeignKey("MealId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -521,9 +538,19 @@ namespace ETBDApp.Migrations
 
             modelBuilder.Entity("ETBDApp.Data.Entities.Meal", b =>
                 {
+                    b.HasOne("ETBDApp.Data.Entities.Structures.MealType", "MealType")
+                        .WithMany()
+                        .HasForeignKey("MealTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("ETBDApp.Data.Entities.User", "User")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("MealType");
 
                     b.Navigation("User");
                 });
@@ -577,6 +604,11 @@ namespace ETBDApp.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("ETBDApp.Data.Entities.Meal", b =>
+                {
+                    b.Navigation("FoodMeals");
                 });
 #pragma warning restore 612, 618
         }

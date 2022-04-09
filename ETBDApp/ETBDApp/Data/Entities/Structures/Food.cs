@@ -5,7 +5,6 @@ namespace ETBDApp.Data.Entities
     {
         public int Id { get; set; }
 
-
         [Required]
         public Category Category { get; set; }
 

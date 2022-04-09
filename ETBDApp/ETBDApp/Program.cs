@@ -1,5 +1,3 @@
-
-
 using ETBDApp.Data.Seeds;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -49,12 +47,17 @@ app.UseAuthorization();
 
 app.MapRazorPages();
 
+
 using (var scope = app.Services.CreateScope())
 {
     var userManager = scope.ServiceProvider.GetRequiredService<UserManager<User>>();
     var roleManager = scope.ServiceProvider.GetRequiredService<RoleManager<IdentityRole>>();
     await ContextSeeder.SeedRolesAsync(roleManager);
     await ContextSeeder.SeedAdminAsync(userManager, roleManager); 
+
+    var eTBDDbcontext = scope.ServiceProvider.GetRequiredService<ETBDDbContext>();
+    await ContextSeeder.SeedPortionType(eTBDDbcontext);
+    await ContextSeeder.SeedMealType(eTBDDbcontext); 
     
 }
 

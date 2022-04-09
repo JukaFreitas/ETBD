@@ -303,6 +303,34 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlMaXN0c1xfTWFuYWdlTmF2LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyNutritionDiary/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlOdXRyaXRpb25EaWFyeVxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyNutritionDiary/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlOdXRyaXRpb25EaWFyeVxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyNutritionDiary/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlOdXRyaXRpb25EaWFyeVxEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyNutritionDiary/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlOdXRyaXRpb25EaWFyeVxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyNutritionDiary/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlOdXRyaXRpb25EaWFyeVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyNutritionStatistics/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlOdXRyaXRpb25TdGF0aXN0aWNzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/MyNutritionStatistics/NutritionStatistics.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTXlOdXRyaXRpb25TdGF0aXN0aWNzXE51dHJpdGlvblN0YXRpc3RpY3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Juka/Documents/ETBD/ETBDApp/ETBDApp/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

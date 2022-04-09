@@ -18,3 +18,4 @@ global using Microsoft.AspNetCore.Mvc.Rendering;
 global using ETBDApp.Data.Interfaces;
 global using System.Linq;
 global using ETBDApp.Pages.MyLists; 
+global using ETBDApp.Data.Entities.Structures;

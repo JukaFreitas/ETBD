@@ -12,7 +12,8 @@
         public PortionType PortionTypes { get; set; }
 
         [Required]
-        public decimal Portion { get; set; }
+        public decimal Quantity { get; set; }
+
 
     }
 }
