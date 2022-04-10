@@ -4,7 +4,43 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Nutrition Statistics</h1>
+
 
 <p>
-    <a asp-page="NutritionStatistics">View Statistics</a>
+    <a asp-page="NutritionStatistics" class="btn btn-primary">View Nutrition Goals</a> <br /> <br />
+    <a asp-page="Fasting" class="btn btn-primary">View Fasting Period</a>
+
+    @if(Model.SucessfulDay)
+    {
+        <div class="alert alert-success">
+            <strong>You met your goal for today!</strong> Well done.
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-warning">
+            <strong>You still have not met your goal for today!</strong> Here are some recommended foods: 
+        </div>
+
+        <table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RecomendedFoods)
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.RecomendedFoods) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+    }
+

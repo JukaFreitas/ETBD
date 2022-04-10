@@ -1,5 +1,3 @@
-using ETBDApp.Data.Seeds;
-
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -22,6 +20,8 @@ builder.Services.AddRazorPages();
 
 //injeção de dependecia. 
 builder.Services.AddTransient<ICSVImporter, CSVImporter>();
+
+builder.Services.AddTransient<IDayValidator, DayValidator>();
 
 var app = builder.Build();
 
@@ -60,5 +60,7 @@ using (var scope = app.Services.CreateScope())
     await ContextSeeder.SeedMealType(eTBDDbcontext); 
     
 }
+
+
 
 app.Run();

@@ -1,7 +1,4 @@
-﻿
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-
-namespace ETBDApp.Data
+﻿namespace ETBDApp.Data
 {
     public class ETBDDbContext : IdentityDbContext<User>
     {
@@ -20,10 +17,8 @@ namespace ETBDApp.Data
 
         public ETBDDbContext(DbContextOptions<ETBDDbContext> options) : base(options)
         {
-            this.ChangeTracker.LazyLoadingEnabled = false; 
+            
         }
-
-       
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -36,7 +31,6 @@ namespace ETBDApp.Data
             modelBuilder.Entity<FoodMeal>().Property(p => p.Quantity).HasColumnType("decimal(5)");
             modelBuilder.Entity<User>().Property(p => p.Height).HasColumnType("decimal(5)");
             modelBuilder.Entity<User>().Property(p => p.Weight).HasColumnType("decimal(5)");
-
             //Fk
             modelBuilder.Entity<ActionFood>().HasKey(af => new { af.ActionId, af.FoodId });
             modelBuilder.Entity<FoodMeal>().HasKey(fm => new { fm.FoodId, fm.MealId });

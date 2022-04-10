@@ -1,12 +1,10 @@
-﻿
-
-namespace ETBDApp.Pages.MyActions
+﻿namespace ETBDApp.Pages.MyActions
 {
     public class IndexModel : PageModel
     {
-        private readonly ETBDApp.Data.ETBDDbContext _context;
+        private readonly ETBDDbContext _context;
 
-        public IndexModel(ETBDApp.Data.ETBDDbContext context)
+        public IndexModel(ETBDDbContext context)
         {
             _context = context;
         }

@@ -1,0 +1,30 @@
+﻿@page "{mealId}"
+@model ETBDApp.Pages.MyNutritionDiary.AddFoodMealModel
+@{
+}
+
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+             <div class="form-group">
+                <label asp-for="Food.Name" class="control-label"></label>
+                <select asp-for="SelectedFoodId" class ="form-control" asp-items="@Model.SelectedListFoods"> 
+                    <option value="0">--Select Food--</option>
+                </select>
+            </div>
+             <div class="form-group">
+                <label asp-for="PortionTypes.Type" class="control-label"></label>
+                <select asp-for="SelectedPortionId" class ="form-control" asp-items="@Model.SelectedListPortionType"> 
+                    <option value="0">--Select Type of Portion--</option>
+                </select>
+            </div>
+            <p></p>
+            <p> Quantity: @Html.TextBoxFor(i => i.Quantity, new { @class="form-control", @type = "number" , @id = "myTexbox"} ) </p>
+        
+            <div class="form-group">
+                <input type="submit" value="Add" class="btn btn-primary" />
+            </div>
+        </form>
+        <a asp-page="Index" class="btn btn-primary">End Meal</a>
+    </div>

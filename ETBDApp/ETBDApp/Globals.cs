@@ -19,3 +19,6 @@ global using ETBDApp.Data.Interfaces;
 global using System.Linq;
 global using ETBDApp.Pages.MyLists; 
 global using ETBDApp.Data.Entities.Structures;
+global using System.Diagnostics;
+global using ETBDApp.Data.Seeds;
+global using ETBDApp.Data.Validators;

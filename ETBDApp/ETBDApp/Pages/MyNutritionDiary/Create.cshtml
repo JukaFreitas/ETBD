@@ -7,7 +7,7 @@
 
 <h1>Create</h1>
 
-<h4>Meal</h4>
+<h4>Nutrition Diary</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -18,39 +18,19 @@
                 <select asp-for="SelectedMealTypeId" class ="form-control" asp-items="@Model.SelectedListMealType"> 
                     <option value="0">--Select Meal--</option>
                 </select>
-
-            </div>
-             <div class="form-group">
-                <label asp-for="Foods.Name" class="control-label"></label>
-                <select asp-for="SelectedFoodId" class ="form-control" asp-items="@Model.SelectedListFoods"> 
-                    <option value="0">--Select Food--</option>
-                </select>
-            </div>
-             <div class="form-group">
-                <label asp-for="PortionTypes.Type" class="control-label"></label>
-                <select asp-for="SelectedPortionId" class ="form-control" asp-items="@Model.SelectedListPortionType"> 
-                    <option value="0">--Select Type of Portion--</option>
-                </select>
-            </div>
-            <p></p>
-            <p> Quantity: @Html.TextBoxFor(i => i.FoodMeals.Quantity, new { @class="form-control", @type = "number" , @id = "myTexbox"} ) </p>
-           @* <div class="form-group">
-                <label asp-for="FoodMeals.Portion" class="control-label"></label>
-                <input type="text" id="FoodMeals.MealId" name="Quantity" />
-                </div>*@
-
-            <div class="form-group">
-                <label asp-for="Meals.StartDate" class="control-label"></label>
-                <input asp-for="Meals.StartDate" class="form-control" />
-                <span asp-validation-for="Meals.StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Meals.EndDate" class="control-label"></label>
-                <input asp-for="Meals.EndDate" class="form-control" />
-                <span asp-validation-for="Meals.EndDate" class="text-danger"></span>
+                <label asp-for="Meal.StartDate" class="control-label"></label>
+                <input asp-for="Meal.StartDate" class="form-control" />
+                <span asp-validation-for="Meal.StartDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <label asp-for="Meal.EndDate" class="control-label"></label>
+                <input asp-for="Meal.EndDate" class="form-control" />
+                <span asp-validation-for="Meal.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Add Foods" class="btn btn-primary" />
             </div>
         </form>
     </div>

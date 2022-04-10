@@ -1,20 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using ETBDApp.Data;
-using ETBDApp.Data.Entities;
-
-namespace ETBDApp.Pages.MyNutritionDiary
+﻿namespace ETBDApp.Pages.MyNutritionDiary
 {
     public class DetailsModel : PageModel
     {
-        private readonly ETBDApp.Data.ETBDDbContext _context;
+        private readonly ETBDDbContext _context;
 
-        public DetailsModel(ETBDApp.Data.ETBDDbContext context)
+        public DetailsModel(ETBDDbContext context)
         {
             _context = context;
         }
@@ -23,6 +13,8 @@ namespace ETBDApp.Pages.MyNutritionDiary
 
         [BindProperty]
         public MealType MealTypes { get; set; }
+        
+
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,8 +22,11 @@ namespace ETBDApp.Pages.MyNutritionDiary
             {
                 return NotFound();
             }
-
-            Meal = await _context.Meals.FirstOrDefaultAsync(m => m.Id == id);
+            
+            Meal = await _context.Meals
+                .Include(m => m.FoodMeals).ThenInclude(m=>m.PortionTypes)
+                .Include(m=>m.FoodMeals).ThenInclude(m=>m.Food)
+                .FirstOrDefaultAsync(m => m.Id == id);
 
             if (Meal == null)
             {

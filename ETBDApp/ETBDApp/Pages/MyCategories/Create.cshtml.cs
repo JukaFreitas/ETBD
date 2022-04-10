@@ -1,6 +1,4 @@
-﻿
-
-namespace ETBDApp.Pages.MyCategories
+﻿namespace ETBDApp.Pages.MyCategories
 {
     public class CreateModel : PageModel
     {

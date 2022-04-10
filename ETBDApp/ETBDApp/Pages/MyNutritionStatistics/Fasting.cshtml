@@ -1,0 +1,36 @@
+﻿@page
+@model ETBDApp.Pages.MyNutritionStatistics.FastingModel
+@{
+}
+
+<h4>Fasting</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+
+         <div class="alert alert-warning">
+            You have not eaten in: <strong> @Model.CurrentFastingMinutes </strong>minutes
+        </div>
+
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="@Model.StartDate" class="control-label"></label>
+                <input asp-for="@Model.StartDate" class="form-control" />
+                <span asp-validation-for="@Model.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.EndDate" class="control-label"></label>
+                <input asp-for="@Model.EndDate" class="form-control" />
+                <span asp-validation-for="@Model.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Search" class="btn btn-primary" />
+            </div>
+        </form>
+
+        <div class="alert alert-info">
+            <strong>Total fasting minutes:</strong> @Model.TotalFastingMinutes 
+        </div>
+
+    </div>
+</div>

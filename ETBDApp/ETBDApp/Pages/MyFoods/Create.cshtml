@@ -3,8 +3,6 @@
 
 @{
     ViewData["Title"] = "Create";
-    
-     
 }
 
 <h1>Create</h1>
@@ -31,13 +29,6 @@
                  @Html.ListBoxFor(i=> Model.SelectedActionsId, Model.Actions, new {@class="form-control"})
              </div>
 
-           @* @foreach(var action in Model.Actions)
-            {
-                <input type ="radio" id="@action.Id" name ="@action.Name" value = "@action.Id">
-                 <label for="@action.Id">@action.Name</label><br>
-                
-            }
-*@
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

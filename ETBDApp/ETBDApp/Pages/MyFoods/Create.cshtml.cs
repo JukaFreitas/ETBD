@@ -20,17 +20,15 @@
         [BindProperty]
         public Food Food { get; set; }
 
-        public SelectList Categories { get; set; }
-
         [BindProperty]
         public int SelectedCategoryId { get; set; }
-
-        public MultiSelectList Actions { get; set; }
      
         [BindProperty]
         public IList<int> SelectedActionsId { get; set; }
 
-        // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
+        public SelectList Categories { get; set; }
+        public MultiSelectList Actions { get; set; }
+
         public async Task<IActionResult> OnPostAsync()
         {
             if (SelectedActionsId == null || !SelectedActionsId.Any())
@@ -47,6 +45,7 @@
             Food.Category = _context.Categories.FirstOrDefault(c => c.Id == SelectedCategoryId);
 
             ModelState.Clear();
+
             TryValidateModel(Food);
 
             if (!ModelState.IsValid)
@@ -69,7 +68,15 @@
             foreach (var actionId in SelectedActionsId)
             {
                 var newAction = _context.Actions.FirstOrDefault(a => a.Id == actionId);
-                ActionFood actionFood = new ActionFood { Action = newAction, Food = Food, ActionId = actionId, FoodId = Food.Id };
+
+                ActionFood actionFood = new ActionFood 
+                { 
+                    Action = newAction, 
+                    Food = Food, 
+                    ActionId = actionId, 
+                    FoodId = Food.Id
+                };
+
                 _context.ActionFoods.Add(actionFood);
                 await _context.SaveChangesAsync();
             }
