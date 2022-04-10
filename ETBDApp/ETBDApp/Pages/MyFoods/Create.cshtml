@@ -3,8 +3,6 @@
 
 @{
     ViewData["Title"] = "Create";
-    
-     
 }
 
 <h1>Create</h1>
@@ -26,6 +24,11 @@
                     <option value="0">--Select Category--</option>
                 </select>
             </div>
+             <p>Please select actions:</p>
+             <div class="form-group">
+                 @Html.ListBoxFor(i=> Model.SelectedActionsId, Model.Actions, new {@class="form-control"})
+             </div>
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>

@@ -1,7 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-
-namespace ETBDApp.Pages
+﻿namespace ETBDApp.Pages
 {
     public class IndexModel : PageModel
     {

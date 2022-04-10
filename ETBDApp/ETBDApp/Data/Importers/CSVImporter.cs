@@ -11,7 +11,8 @@
 
         public void Import()
         {
-            string path = @"C:\Users\Juka\Documents\ETBD\ETBDDb.csv";
+            
+            string path = @"Files\ETBDDb.csv";
 
             string[] lines = File.ReadAllLines(path);
 
@@ -25,7 +26,6 @@
                 }
 
                 Category category;
-                Action action;
 
                 var categoryName = columns[1];
 
@@ -43,25 +43,31 @@
                 _context.Foods.Add(food);
                 _context.SaveChanges();
 
-                var actionsNames = columns[2].Trim().Split(';');
+                ImportActions(columns, food);
+            }
+        }
 
-                foreach (var actionName in actionsNames)
+        private void ImportActions(string[] columns, Food food)
+        {
+            Action action;
+            var actionsNames = columns[2].Trim().Split(';');
+
+            foreach (var actionName in actionsNames)
+            {
+                if (!_context.Actions.Any(x => x.Name.Equals(actionName)))
                 {
-                    if (!_context.Actions.Any(x => x.Name.Equals(actionName)))
-                    {
-                        action = new Action() { Name = actionName };
-                        _context.Actions.Add(action);
-                        _context.SaveChanges();
-                    }
-                    else
-                    {
-                        action = _context.Actions.FirstOrDefault(x => x.Name.Equals(actionName));
-                    }
-
-                    var actionFood = new ActionFood() { Action = action, Food = food, ActionId = action.Id, FoodId = food.Id };
-                    _context.ActionFoods.Add(actionFood);
+                    action = new Action() { Name = actionName };
+                    _context.Actions.Add(action);
                     _context.SaveChanges();
                 }
+                else
+                {
+                    action = _context.Actions.FirstOrDefault(x => x.Name.Equals(actionName));
+                }
+
+                var actionFood = new ActionFood() { Action = action, Food = food, ActionId = action.Id, FoodId = food.Id };
+                _context.ActionFoods.Add(actionFood);
+                _context.SaveChanges();
             }
         }
     }
