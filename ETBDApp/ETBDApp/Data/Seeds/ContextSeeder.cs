@@ -51,11 +51,11 @@
 
         public static async Task SeedMealType(ETBDDbContext eTBDDbContext)
         {
-            if(!eTBDDbContext.MealTypes.Any(m=> m.Type == "Breakfast"))
+            if (!eTBDDbContext.MealTypes.Any(m => m.Type == "Breakfast"))
             {
                 var breakfastMeal = new MealType { Type = "Breakfast" };
                 eTBDDbContext.MealTypes.Add(breakfastMeal);
-                await eTBDDbContext.SaveChangesAsync(); 
+                await eTBDDbContext.SaveChangesAsync();
             }
             if (!eTBDDbContext.MealTypes.Any(m => m.Type == "Lunch"))
             {
@@ -75,7 +75,6 @@
                 eTBDDbContext.MealTypes.Add(snackMeal);
                 await eTBDDbContext.SaveChangesAsync();
             }
-
         }
     }
 }

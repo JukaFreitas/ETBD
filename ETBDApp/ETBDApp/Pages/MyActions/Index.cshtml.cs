@@ -9,7 +9,7 @@
             _context = context;
         }
 
-        public IList<Action> Action { get;set; }
+        public IList<Action> Action { get; set; }
 
         public async Task OnGetAsync()
         {

@@ -2,6 +2,6 @@
 {
     public interface ICSVImporter
     {
-        void Import(); 
+        void Import();
     }
 }

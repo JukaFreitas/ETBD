@@ -33,7 +33,7 @@ namespace ETBDApp.Pages.MyNutritionStatistics
                 if (!missingActions.Any())
                 {
                     missingActions = _context.Actions.ToList();
-                    // no caso de te nao ter os cinco alimentos, mas ja ter as cinco açoes. 
+                    // no caso de te nao ter os cinco alimentos, mas ja ter as cinco açoes.
                 }
 
                 foreach (var missingAction in missingActions)
@@ -54,7 +54,7 @@ namespace ETBDApp.Pages.MyNutritionStatistics
 
                 if (favouriteActionFood != null)
                 {
-                    favouriteActionFoods.Add(favouriteActionFood.Food); 
+                    favouriteActionFoods.Add(favouriteActionFood.Food);
                 }
             }
 
@@ -73,7 +73,6 @@ namespace ETBDApp.Pages.MyNutritionStatistics
 
                 RecomendedFoods.Add(actionFoods.First());
                 RecomendedFoods.Add(actionFoods.Last());
-
             }
 
             RecomendedFoods = RecomendedFoods.Distinct().ToList();

@@ -1,6 +1,4 @@
-﻿
-
-namespace ETBDApp.Pages.MyBlacklists
+﻿namespace ETBDApp.Pages.MyBlacklists
 {
     public class EditModel : PageModel
     {

@@ -1,4 +1,3 @@
-
 namespace ETBDApp.Pages.MyLists
 {
     public class BlackListModel : PageModel

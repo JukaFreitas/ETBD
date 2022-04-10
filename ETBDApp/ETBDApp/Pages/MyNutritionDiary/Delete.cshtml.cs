@@ -1,5 +1,4 @@
-﻿
-namespace ETBDApp.Pages.MyNutritionDiary
+﻿namespace ETBDApp.Pages.MyNutritionDiary
 {
     public class DeleteModel : PageModel
     {
@@ -12,6 +11,7 @@ namespace ETBDApp.Pages.MyNutritionDiary
 
         [BindProperty]
         public Meal Meal { get; set; }
+
         [BindProperty]
         public MealType MealTypes { get; set; }
 

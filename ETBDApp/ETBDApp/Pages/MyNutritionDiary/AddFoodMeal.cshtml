@@ -26,5 +26,12 @@
                 <input type="submit" value="Add" class="btn btn-primary" />
             </div>
         </form>
+        @if (ViewData["Message"] != null)
+             {
+                 <script type="text/javascript">
+                     window.onload = function ()    {
+                         alert("@ViewData["Message"]"); };
+                         </script>
+             }
         <a asp-page="Index" class="btn btn-primary">End Meal</a>
     </div>

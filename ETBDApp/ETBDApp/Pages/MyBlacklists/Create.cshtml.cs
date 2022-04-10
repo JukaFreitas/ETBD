@@ -26,8 +26,6 @@
         [BindProperty]
         public int SelectedFoodId { get; set; }
 
-        
-
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
@@ -41,9 +39,9 @@
                 return Page();
             }
 
-            BlackList.Food = _context.Foods.Include(f=> f.Category).Where(f => f.Id == SelectedFoodId).ToList().FirstOrDefault();
+            BlackList.Food = _context.Foods.Include(f => f.Category).Where(f => f.Id == SelectedFoodId).ToList().FirstOrDefault();
             BlackList.CreationDate = DateTime.Now;
-            
+
             ModelState.Clear();
             TryValidateModel(BlackList);
 

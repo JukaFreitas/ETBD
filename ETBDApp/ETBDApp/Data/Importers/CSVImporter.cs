@@ -11,7 +11,6 @@
 
         public void Import()
         {
-            
             string path = @"Files\ETBDDb.csv";
 
             string[] lines = File.ReadAllLines(path);

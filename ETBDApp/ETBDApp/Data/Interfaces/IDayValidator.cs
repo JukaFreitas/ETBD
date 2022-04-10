@@ -3,6 +3,7 @@
     public interface IDayValidator
     {
         bool IsSucessfulDay(User user, DateTime day);
-        List<Action> GetMissingActions(); 
+
+        List<Action> GetMissingActions();
     }
 }

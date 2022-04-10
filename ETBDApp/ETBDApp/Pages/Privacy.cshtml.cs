@@ -1,5 +1,4 @@
-﻿
-namespace ETBDApp.Pages
+﻿namespace ETBDApp.Pages
 {
     public class PrivacyModel : PageModel
     {

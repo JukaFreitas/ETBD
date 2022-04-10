@@ -44,7 +44,6 @@ namespace ETBDApp.Pages.MyNutritionStatistics
                 if (_validator.IsSucessfulDay(user, day))
                 {
                     SuccessfulDays.Add(day.ToString("dd-MM-yyyy"));
-                    
                 }
                 else
                 {

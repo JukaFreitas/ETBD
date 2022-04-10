@@ -12,7 +12,7 @@
         public IActionResult OnGet()
         {
             this.Categories = new SelectList(_context.Categories, "Id", "Name");
-            this.Actions = new MultiSelectList(_context.Actions, "Id", "Name"); 
+            this.Actions = new MultiSelectList(_context.Actions, "Id", "Name");
 
             return Page();
         }
@@ -22,7 +22,7 @@
 
         [BindProperty]
         public int SelectedCategoryId { get; set; }
-     
+
         [BindProperty]
         public IList<int> SelectedActionsId { get; set; }
 
@@ -69,11 +69,11 @@
             {
                 var newAction = _context.Actions.FirstOrDefault(a => a.Id == actionId);
 
-                ActionFood actionFood = new ActionFood 
-                { 
-                    Action = newAction, 
-                    Food = Food, 
-                    ActionId = actionId, 
+                ActionFood actionFood = new ActionFood
+                {
+                    Action = newAction,
+                    Food = Food,
+                    ActionId = actionId,
                     FoodId = Food.Id
                 };
 

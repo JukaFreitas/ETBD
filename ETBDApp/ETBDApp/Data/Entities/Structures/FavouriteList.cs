@@ -9,6 +9,5 @@
         public User User { get; set; }
 
         public DateTime CreationDate { get; set; }
-
     }
 }

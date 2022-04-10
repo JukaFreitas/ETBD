@@ -13,7 +13,5 @@
 
         [Required]
         public decimal Quantity { get; set; }
-
-
     }
 }

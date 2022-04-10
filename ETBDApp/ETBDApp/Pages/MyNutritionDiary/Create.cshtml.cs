@@ -1,13 +1,12 @@
-﻿
-namespace ETBDApp.Pages.MyNutritionDiary
+﻿namespace ETBDApp.Pages.MyNutritionDiary
 {
     public class CreateModel : PageModel
     {
         private readonly ETBDDbContext _context;
         private readonly UserManager<User> _userManager;
+
         public CreateModel(ETBDDbContext context, UserManager<User> userManager)
         {
-            
             _userManager = userManager;
             _context = context;
         }
@@ -29,7 +28,6 @@ namespace ETBDApp.Pages.MyNutritionDiary
 
         public SelectList SelectedListMealType { get; set; }
 
-
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
         {
@@ -37,7 +35,7 @@ namespace ETBDApp.Pages.MyNutritionDiary
 
             Meal.MealType = _context.MealTypes.FirstOrDefault(mt => mt.Id == SelectedMealTypeId);
 
-            Meal.FoodMeals = new List<FoodMeal>(); 
+            Meal.FoodMeals = new List<FoodMeal>();
 
             ModelState.Clear();
             TryValidateModel(Meal);
@@ -51,9 +49,7 @@ namespace ETBDApp.Pages.MyNutritionDiary
             _context.Meals.Add(Meal);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./AddFoodMeal", new { mealId = Meal.Id});
+            return RedirectToPage("./AddFoodMeal", new { mealId = Meal.Id });
         }
-
-
     }
 }

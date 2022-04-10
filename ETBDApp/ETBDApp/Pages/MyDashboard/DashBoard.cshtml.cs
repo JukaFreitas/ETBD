@@ -12,7 +12,7 @@ namespace ETBDApp.Pages.MyDashboard
         [Display(Name = "Total Customers")]
         public int CustomersCount { get; set; }
 
-        [Display(Name ="Total Meals")]
+        [Display(Name = "Total Meals")]
         public int MealsCount { get; set; }
 
         [Display(Name = "Top 10 Food")]
@@ -20,7 +20,6 @@ namespace ETBDApp.Pages.MyDashboard
 
         [Display(Name = "Top 5 Users with more meals")]
         public IEnumerable<string> TopUsersMeals { get; set; }
-
 
         public IActionResult OnGet()
         {
@@ -41,30 +40,28 @@ namespace ETBDApp.Pages.MyDashboard
 
             var mealsByOrder = _eTBDDbContext.Meals.GroupBy(m => m.User.Id).OrderByDescending(m => m.Count()).Take(topValue);
 
-            // .First utiliza a primeira meal inserida. 
+            // .First utiliza a primeira meal inserida.
 
-            var usersName = mealsByOrder.Select(m => m.First().User.UserName); 
+            var usersName = mealsByOrder.Select(m => m.First().User.UserName + ";");
 
-            return usersName; 
+            return usersName;
         }
 
         private IEnumerable<string> GetTopFood()
         {
             var topValue = 10;
 
-            var topFoods = _eTBDDbContext.FoodMeals.GroupBy(f => f.FoodId).OrderByDescending(f => f.Count()).Take(topValue); 
+            var topFoods = _eTBDDbContext.FoodMeals.GroupBy(f => f.FoodId).OrderByDescending(f => f.Count()).Take(topValue);
 
-            var foodName = topFoods.Select(m => m.First().Food.Name);
+            var foodName = topFoods.Select(m => m.First().Food.Name + ";");
 
-            return foodName; 
-
-            
+            return foodName;
         }
 
         private int GetMealsCount()
         {
-            var meals = _eTBDDbContext.Meals.Count(m => m.Id >= 0);
-            return meals; 
+            var meals = _eTBDDbContext.Meals.Count();
+            return meals;
         }
 
         private int GetCustomersCount()
@@ -73,21 +70,17 @@ namespace ETBDApp.Pages.MyDashboard
 
             var customerCount = _eTBDDbContext.UserRoles.Where(u => u.RoleId == customerRole.Id).Count();
 
-            return customerCount; 
+            return customerCount;
         }
 
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
-
                 return Page();
             }
-               
 
             return RedirectToPage("./Index");
         }
     }
 }
-    
-

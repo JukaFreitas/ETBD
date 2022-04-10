@@ -1,14 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore;
-using ETBDApp.Data;
-using ETBDApp.Data.Entities;
-
-namespace ETBDApp.Pages.MyBlacklists
+﻿namespace ETBDApp.Pages.MyBlacklists
 {
     public class DeleteModel : PageModel
     {

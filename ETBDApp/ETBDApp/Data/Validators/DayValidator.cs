@@ -2,9 +2,8 @@
 {
     public class DayValidator : IDayValidator
     {
-
         private readonly ETBDDbContext _context;
-        private List<Action> _missingActions { get; set; } 
+        private List<Action> _missingActions { get; set; }
 
         public DayValidator(ETBDDbContext context)
         {
@@ -14,7 +13,7 @@
 
         public bool IsSucessfulDay(User user, DateTime day)
         {
-            _missingActions.Clear(); 
+            _missingActions.Clear();
             var actionsPerDay = new List<Action>();
             var meals = _context.Meals.Where(m => m.User.Id == user.Id && m.StartDate.Date >= day && m.EndDate.Date <= day).Include(m => m.FoodMeals);
             var foodCount = 0;
@@ -35,8 +34,8 @@
             }
 
             if (HasAllActions(actionsPerDay) && foodCount >= 5)
-            { 
-                return true; 
+            {
+                return true;
             }
             else
             {
@@ -59,7 +58,7 @@
 
         public List<Action> GetMissingActions()
         {
-            return _missingActions; 
+            return _missingActions;
         }
     }
 }

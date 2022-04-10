@@ -1,6 +1,4 @@
-﻿
-
-namespace ETBDApp.Pages.MyBlacklists
+﻿namespace ETBDApp.Pages.MyBlacklists
 {
     public class IndexModel : PageModel
     {
@@ -11,15 +9,14 @@ namespace ETBDApp.Pages.MyBlacklists
         {
             _context = context;
             _userManager = userManager;
-
         }
 
-        public IList<BlackList> BlackList { get;set; }
+        public IList<BlackList> BlackList { get; set; }
 
         public async Task OnGetAsync()
         {
             var user = await _userManager.GetUserAsync(User);
-            BlackList = await _context.BlackLists.Include(b => b.Food).Where(b=> b.User.Id == user.Id).ToListAsync();
+            BlackList = await _context.BlackLists.Include(b => b.Food).Where(b => b.User.Id == user.Id).ToListAsync();
         }
     }
 }

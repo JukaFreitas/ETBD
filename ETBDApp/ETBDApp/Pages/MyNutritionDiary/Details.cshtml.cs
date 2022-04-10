@@ -13,8 +13,6 @@
 
         [BindProperty]
         public MealType MealTypes { get; set; }
-        
-
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -22,10 +20,10 @@
             {
                 return NotFound();
             }
-            
+
             Meal = await _context.Meals
-                .Include(m => m.FoodMeals).ThenInclude(m=>m.PortionTypes)
-                .Include(m=>m.FoodMeals).ThenInclude(m=>m.Food)
+                .Include(m => m.FoodMeals).ThenInclude(m => m.PortionTypes)
+                .Include(m => m.FoodMeals).ThenInclude(m => m.Food)
                 .FirstOrDefaultAsync(m => m.Id == id);
 
             if (Meal == null)

@@ -6,7 +6,6 @@
         public Food Food { get; set; }
 
         public int ActionId { get; set; }
-        public int FoodId { get; set; } 
-
+        public int FoodId { get; set; }
     }
 }

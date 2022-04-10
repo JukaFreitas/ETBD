@@ -43,7 +43,7 @@ namespace ETBDApp.Pages.MyNutritionDiary
             Meal meal = _context.Meals.Include(m => m.FoodMeals).FirstOrDefault(m => m.Id == mealId);
             FoodMeal.PortionTypes = _context.PortionTypes.FirstOrDefault(pt => pt.Id == SelectedPortionId);
             FoodMeal.Food = _context.Foods.Include(f => f.Category).FirstOrDefault(fm => fm.Id == SelectedFoodId);
-            FoodMeal.Quantity = Quantity; 
+            FoodMeal.Quantity = Quantity;
 
             meal.FoodMeals.Add(FoodMeal);
             ModelState.Clear();
@@ -51,11 +51,12 @@ namespace ETBDApp.Pages.MyNutritionDiary
 
             if (ModelState.IsValid)
             {
+                ViewData["Message"] = "Food Added";
                 _context.Meals.Update(meal);
                 await _context.SaveChangesAsync();
             }
             this.SelectedFoodId = 0;
-            this.SelectedPortionId = 0; 
+            this.SelectedPortionId = 0;
             this.Quantity = 0;
 
             this.SelectedListFoods = new SelectList(_context.Foods, "Id", "Name");

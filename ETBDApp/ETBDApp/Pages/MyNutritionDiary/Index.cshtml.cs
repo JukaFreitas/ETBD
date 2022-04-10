@@ -1,20 +1,24 @@
-﻿
-namespace ETBDApp.Pages.MyNutritionDiary
+﻿namespace ETBDApp.Pages.MyNutritionDiary
 {
     public class IndexModel : PageModel
     {
         private readonly ETBDDbContext _context;
+        private readonly UserManager<User> _userManager;
 
-        public IndexModel(ETBDApp.Data.ETBDDbContext context)
+        public IndexModel(ETBDDbContext context, UserManager<User> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
-        public IList<Meal> Meal { get;set; }
+        public IList<Meal> Meal { get; set; }
         public IList<MealType> MealTypes { get; set; }
+
         public async Task OnGetAsync()
         {
-            Meal = await _context.Meals.Include(m=> m.MealType).ToListAsync();
+            var user = await _userManager.GetUserAsync(User);
+            
+            Meal = await _context.Meals.Include(m => m.MealType).Where(m=>m.User == user).ToListAsync();
         }
     }
 }
